@@ -1,0 +1,27 @@
+server:
+  port: 5002
+spring:
+  data:
+    mongodb:
+      database: masterdb
+testMessage: Hi There
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7050/eureka
+instances:
+  leaseRenewalIntervalInSeconds: 10
+jpa:
+  show-sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+rabbit:
+  product:
+    topicExchange: product-update
+rabbitmq:
+  listener:
+    simple:
+      default-requeue-rejected: true
